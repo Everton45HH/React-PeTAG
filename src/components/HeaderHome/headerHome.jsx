@@ -1,4 +1,4 @@
-import styles from '../../styles/HeaderHome.module.css';
+import styles from '../../styles/home.module.css';
 function HeaderHome() {
   return (
     <header>
@@ -29,4 +29,7 @@ function HeaderHome() {
     </header>
   );
 }
+<script>
+    
+</script>
 export default HeaderHome;
