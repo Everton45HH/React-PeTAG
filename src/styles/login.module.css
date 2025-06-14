@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+.container {
+    background-color: #9cd3de;
+    width: 60%;
+    margin: auto;
+    max-width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login{
+    width: 40%;
+    margin: auto auto;
+    padding: 10px;
+}
+
+.logo{
+    background-color: white;
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    min-width: 40px;
+    max-width: 80px;
+    min-height: 40px;
+    max-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: -3px 2px 0px rgba(0, 0, 0, 2);
+    font-size: 1.5vw;
+}
+
+
+.login_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10%;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.login_box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #e6ebec;
+}
+
+
+.label {
+    color: black;
+}
+
+button {
+    background-color: #b0e57c;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #9cd667;
+}
+
+.cadastro {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.cadastro a {
+    color: #0095ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cadastro a:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    width: 15px;
+    left: -10px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    filter: blur(3px);
+}
+
+
+.animal_img{
+    width: 55%;
+    display: flex;
+    object-fit: cover;
+    border-radius: 10px;
+    background-image: url('../assets/dog.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.submit-button{
+    background-color: #b0e57c;
+    font-weight: 600;
+    color: white;
+    margin: 5px;
+}
+
+
+i{
+    font-size: 30px;
+    font-style: normal; 
+    margin: 0px 10px;
+}
