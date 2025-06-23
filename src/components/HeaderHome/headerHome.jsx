@@ -19,17 +19,15 @@ function HeaderHome() {
                     <li><a href="#" className={styles.nav_link}>CADASTRE-SE</a></li>
                 </ul>
             </div>
-
+{/* 
             <div className={styles.menu} onClick={showSideContent}>
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </div> */}
         </nav>
     </header>
   );
 }
-<script>
     
-</script>
 export default HeaderHome;

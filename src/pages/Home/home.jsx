@@ -1,9 +1,11 @@
 import styles from '../../styles/home.module.css';
-import dogimage1 from '../../assets/images/cão1.webp';
+import dogimage1 from '../../assets/images/cao1.webp';
+import HeaderHome from '../../components/HeaderHome/HeaderHome.jsx';
 
 export default function Home() {
     return (
         <>
+            <HeaderHome />
             <main>
                 <div className={styles.container_keyframe}>
                     <span className="div1"></span>

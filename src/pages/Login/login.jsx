@@ -1,12 +1,26 @@
 import styles from '../../styles/Login.module.css';
+import dog from '../../assets/images/cao2.webp'; // ajuste o caminho conforme necessário
+import logo from '../../assets/images/logo.png'; // ajuste o caminho conforme necessário
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"></link>
 export default function Login() {
     return (
         <>
         <div className={styles.container}>
+
             <img src={dog} alt="Dog" className={styles.animal_img} />
-            <div className={styles.overlay}></div>
+            {/* <div className={styles.overlay}></div> */}
+
             <div className={styles.login}>
-            <img src={logo} alt="Logo PeTAG" className={styles.logo} />
+                
+                {/* <img src={logo} alt="Logo PeTAG" className={styles.logo} /> */}
+                <div className={styles.logo}>
+                    <h1><span className={styles.blue}>Pe</span><span className={styles.black}>TAG</span></h1>
+                    <p>Pet Tracking & GPS</p>
+                </div>
+
+
                 <form className={styles.login_box}>
                     <label htmlFor="email" className={styles.label}>Email:</label>
                     <input type="email" placeholder="Email" name="email" required />
@@ -22,11 +36,15 @@ export default function Login() {
                         <i className="fa-brands fa-microsoft"></i>
                     </div>
 
-                    <input type="submit" id="submit-button" value="ENTRAR" />
+                    <span>
+                        <button type="submit" className="submit_button" placeholder="ENVIAR" />
+                    </span>
+                    
+
+                    <p className={styles.cadastro}>Não tem uma conta? <a href="/register">Cadastre-se</a></p>
+                        
                 </form>
-                <p className="cadastro">
-                    Não tem uma conta? <a href="/register">Cadastre-se</a>
-                </p>
+
             </div>
         </div>
         </>
