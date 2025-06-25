@@ -1,9 +1,8 @@
 import styles from '../../styles/Login.module.css';
-import dog from '../../assets/images/cao2.webp'; // ajuste o caminho conforme necessário
-import logo from '../../assets/images/logo.png'; // ajuste o caminho conforme necessário
-
-
+import dog from '../../assets/images/cao2.webp';
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"></link>
+
+
 export default function Login() {
     return (
         <>
@@ -30,15 +29,13 @@ export default function Login() {
 
                     <p>OU</p>
 
-                    <div style={{ display: 'block' }}>
+                    <div className={styles.social_login}>
                         <i className="fa-brands fa-google"></i>
                         <i className="fa-brands fa-facebook"></i>
                         <i className="fa-brands fa-microsoft"></i>
                     </div>
 
-                    <span>
-                        <button type="submit" className="submit_button" placeholder="ENVIAR" />
-                    </span>
+                    <input type="submit" className="submit_input" placeholder='ENVIAR'/>
                     
 
                     <p className={styles.cadastro}>Não tem uma conta? <a href="/register">Cadastre-se</a></p>
