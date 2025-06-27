@@ -1,5 +1,6 @@
 import styles from '../../styles/Login.module.css';
 import dog from '../../assets/images/cao2.webp';
+import logo from '../../assets/images/Logo.png';
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"></link>
 
 
@@ -9,15 +10,10 @@ export default function Login() {
         <div className={styles.container}>
 
             <img src={dog} alt="Dog" className={styles.animal_img} />
-            {/* <div className={styles.overlay}></div> */}
 
             <div className={styles.login}>
                 
-                {/* <img src={logo} alt="Logo PeTAG" className={styles.logo} /> */}
-                <div className={styles.logo}>
-                    <h1><span className={styles.blue}>Pe</span><span className={styles.black}>TAG</span></h1>
-                    <p>Pet Tracking & GPS</p>
-                </div>
+                <img src={logo} alt="Logo PeTAG" className={styles.logo} />
 
 
                 <form className={styles.login_box}>

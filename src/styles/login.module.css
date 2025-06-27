@@ -5,23 +5,26 @@
   font-family: Arial, sans-serif;
   color: black;
 }
+:root{
+    width: 99vw;
+    overflow: hidden;
+}
 
 body{
     background-color: #00d5ff;
-    padding: auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     height: 100vh;
 }
+
 .container {
     background-color: #9cd3de;
     width: 100vw;
-    max-width: 76%;
+    max-width: 65%;
     height: 86vh;
-    margin: auto;
     border-radius: 10px;
+    margin: 0 auto;
     text-align: center;
     display: flex;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);

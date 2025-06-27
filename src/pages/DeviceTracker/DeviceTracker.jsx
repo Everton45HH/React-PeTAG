@@ -1,28 +1,32 @@
 import map from '../../assets/images/map.jpg'
-import style from '../../styles/map.module.css';
+import style from '../../styles/tracker.module.css';
 
 
 export default function Login() {
     return (
-        <>
         <div className={style.container}>
+            
+            <div className={style.deviceHeader}>
 
-            <div className="deviceName">
-                <h1>Dispositivo 1</h1>
+                <div className={style.back}>
+                    <a href="/"><i className="fa-solid fa-arrow-left"></i></a>
+                </div>
+
+                <div className={style.deviceName}>
+
+                    <h1>Dispositivo 1</h1>
+
+                </div>
             </div>
 
-            <div>
-                <img src={map} alt="MAPA" className='map'/>
+            <div className={style.map}>
+                <img src={map} alt="MAPA"/>
             </div>
 
-            <div className="deviceData">
-
+            <div className={style.deviceData}>
                 <h1>
-                    Historico Coordenadas
+                    Historico De Coordenadas
                 </h1>
-
             </div>
         </div>
-        </>
-    
-)}
+    )}
