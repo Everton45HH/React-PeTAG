@@ -1,23 +1,12 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-:root{
-    width: 99vw;
-    overflow: hidden;
-}  */
-
 body{
     background-color: #00d5ff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh
 }
 
-.container {
+.container{
     background-color: #9cd3de;
     width: 100vw;
     max-width: 65%;
@@ -35,9 +24,9 @@ body{
     margin: auto auto;
     padding: 10px;
     display: flex  ;
+    gap: 1vh;
     flex-direction: column;
     align-items: center;
-    gap: 4vh;
 }
 
 .logo{
@@ -51,23 +40,19 @@ body{
 .login_box {
     display: flex;
     flex-direction: column;
+    padding: 0% 10% 0 10%;
     background-color: white;
     border-radius: 10px;
     width: 70%;
-    padding: 10%;
-    gap: 2px;
 }
-
 .login_box input {
-    width: 100%;
-    height: 40px;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
+    height: 40px;
     font-size: 16px;
     background-color:  #e6ebec;
 }
-
 .login_box input:nth-last-child(2) {
     background-color: #b0e57c;
     font-weight: 600;
@@ -78,6 +63,12 @@ body{
 .social_login{
     display: block;
     flex-wrap: nowrap;
+}
+
+.animal_img{
+    width: 73vh;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .label {
     color: black;
@@ -114,5 +105,3 @@ i{
     font-style: normal; 
     margin: 0px 10px;
 }
-
-
