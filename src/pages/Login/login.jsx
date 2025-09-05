@@ -17,11 +17,11 @@ export default function Login() {
 
 
                 <form className={styles.login_box}>
-                    <label htmlFor="email" className={styles.label}>Email:</label>
-                    <input type="email" placeholder="Email" name="email" required />
+                        <label className={styles.label}>Email:</label>
+                        <input type="email" placeholder="Email" name="email" required />
 
-                    <label htmlFor="senha" className={styles.label}>Senha:</label>
-                    <input type="password" placeholder="Senha" name="senha" required />
+                        <label className={styles.label}>Senha:</label>
+                        <input type="password" placeholder="Senha" name="senha" required />
 
                     <p>OU</p>
 
