@@ -1,5 +1,5 @@
 #PROJETO INTEGRADO DO CURSO DE INFORMÀTICA
-<br>
+<br><br><br><br>
 O projeto consiste no desenvolvimento de uma aplicação web para o rastreio e monitoramento de animais de estimação através uma coleira,que fornece as coordenadas de localização do animal. Será possivel 
 visualizar na aplicação a localização aproximada do animal. A aplicação tambem fornecerá alarmes que podem delimitar o raio maximo onde o animal pode ir,caso o animal exceda o limite a aplicação enviara uma notificação ao front-end
 <br>
