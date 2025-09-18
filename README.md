@@ -1,10 +1,11 @@
-#PROJETO INTEGRADO DO CURSO DE INFORMÀTICA
-<br><br><br><br>
+ #                                                                            PROJETO INTEGRADO DO CURSO DE INFORMÀTICA
+ 
+<br><br
 O projeto consiste no desenvolvimento de uma aplicação web para o rastreio e monitoramento de animais de estimação através uma coleira,que fornece as coordenadas de localização do animal. Será possivel 
 visualizar na aplicação a localização aproximada do animal. A aplicação tambem fornecerá alarmes que podem delimitar o raio maximo onde o animal pode ir,caso o animal exceda o limite a aplicação enviara uma notificação ao front-end
-<br>
+<br><br>
 Sobre
-<br>
+<br><br>
 O projeto "PeTAG" é constituido por uma aplicação web,feita em React,e uma REST API,feita em Flask. As linguagens de programação utilizadas para o desenvolvimento são Pyhon, SQL e Javascript
 <br>
 Feito por:
