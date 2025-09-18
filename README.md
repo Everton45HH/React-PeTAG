@@ -1,3 +1,22 @@
+#PROJETO INTEGRADO DO CURSO DE INFORMÀTICA
+O projeto consiste no desenvolvimento de uma aplicação web para o rastreio e monitoramento de animais de estimação através uma coleira,que fornece as coordenadas de localização do animal. Será possivel 
+visualizar na aplicação a localização aproximada do animal. A aplicação tambem fornecerá alarmes que podem delimitar o raio maximo onde o animal pode ir,caso o animal exceda o limite a aplicação enviara uma notificação ao front-end
+
+Sobre
+O projeto "PeTAG" é constituido por uma aplicação web,feita em React,e uma REST API,feita em Flask. As linguagens de programação utilizadas para o desenvolvimento são Pyhon, SQL e Javascript
+
+Feito por:
+Everton Paulino
+Julia Christina
+Lucas Julião
+Wagner Kiota
+
+
+
+
+
+
+Feito com:
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
