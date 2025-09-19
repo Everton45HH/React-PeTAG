@@ -26,7 +26,7 @@ FOREIGN KEY (idColeira) REFERENCES Coleira(idColeira)
 
 INSERT INTO Usuario (userID, email, senha) 
 VALUES 
-(5, 'joao@gmail.com', 'senha123');
+(1, 'joao@gmail.com', 'senha123');
 
 INSERT INTO Coleira	 (idColeira,nomeColeira, latitude, longitude) 
 VALUES 
