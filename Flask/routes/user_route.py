@@ -25,8 +25,6 @@ def login():
 
     if error:
         return jsonify({"message": "Usuário não encontrado"}), 404
-    print(user["senha"])
-    print(user)
     if user["senha"] == senha:
         return jsonify({"message": "Login realizado com sucesso"}), 200
     else:
