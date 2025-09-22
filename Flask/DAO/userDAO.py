@@ -95,6 +95,23 @@ class UserDAO:
             cursor.close()
             conn.close()
     
+    def getUserByEmailDAO(self, email):
+        conn , cursor = self.get_connection()
+        try:
+            cursor.execute("SELECT userID , nome , email , senha , telefone FROM Usuario WHERE email = ?", (email,))
+            user = cursor.fetchone()
+            if user:
+                user_dict = {'userID': user[0], 'nome': user[1], 'email': user[2], 'senha': user[3], 'telefone': user[4]}
+                return user_dict, None
+            else:
+                return None, "User not found"
+        except Exception:
+            return None, "Database error"
+        finally:
+            cursor.close()
+            conn.close()
+
+    
     def updateUserDAO(self, id, new_info):
         conn , cursor = self.get_connection()
         try:

@@ -16,6 +16,23 @@ def create():
 
     return jsonify({'message': response}), 201
 
+@users_bp.route('/user/login' , methods=['POST'])
+def login():
+    info_body = request.json
+    email = info_body.get("email")
+    senha = info_body.get("senha")
+    user , error = get_user_by_email(email)
+
+    if error:
+        return jsonify({"message": "Usuário não encontrado"}), 404
+    print(user["senha"])
+    print(user)
+    if user["senha"] == senha:
+        return jsonify({"message": "Login realizado com sucesso"}), 200
+    else:
+        return jsonify({"message": "Senha incorreta"}), 401
+
+
 @users_bp.route('/user/<int:id>', methods=['PATCH','PUT'])
 def update(id):
     user, erro = update_user(id, request.json)

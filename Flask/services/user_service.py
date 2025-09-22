@@ -7,6 +7,10 @@ def create_user(info):
     response , error = daoService.addUserDAO(info)
     return response, error
 
+def get_user_by_email(info):
+    response , error = daoService.getUserByEmailDAO(info)
+    return response , error
+
 def get_all_users():
     users, erro = daoService.listAllUsersDAO()
     return users, erro

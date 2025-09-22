@@ -1,35 +1,41 @@
 import styles from '../../styles/Register.module.css';
 import dog from '../../assets/images/cao2.webp';
 import logo from '../../assets/images/Logo.png';
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Register() {
+  const navigate = useNavigate();
 
-    const [nome, setNome] = useState("");
-    const [telefone, setTelefone] = useState("");
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-        const response = await fetch("http://127.0.0.1:5000/user/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nome, telefone, email, senha })
-        });
-
-        const data = await response.json();
-        console.log(data);
-        alert(data.message)
-        } catch (error) {
-        console.error("Erro ao registrar:", error);
-        alert("Erro ao conectar com o servidor.");
-        }
-    };
+  const [nome, setNome] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/user/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, telefone, email, senha })
+      });
+
+      const data = await response.json();
+      alert(data.message);
+
+      if (response.ok) {
+        navigate("/user/login");
+      }
+
+    } catch (error) {
+      console.error("Erro ao registrar:", error);
+      alert("Erro ao conectar com o servidor.");
+    }
+  };
 
     return (
 
