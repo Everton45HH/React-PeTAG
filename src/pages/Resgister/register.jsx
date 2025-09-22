@@ -14,7 +14,7 @@ export default function Register() {
         e.preventDefault();
 
         try {
-        const response = await fetch("http://127.0.0.1:5000/register", {
+        const response = await fetch("http://127.0.0.1:5000/user/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nome, telefone, email, senha })
@@ -66,7 +66,7 @@ export default function Register() {
                     <input type="submit" id="submit-button" value="CRIAR CONTA"/>
 
                     <p className={styles.cadastro}>
-                        Já tem uma conta? <a href="/login">Conecte-se</a>
+                        Já tem uma conta? <a href="/user/login">Conecte-se</a>
                     </p>
                 </form>
             </div>

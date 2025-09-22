@@ -43,7 +43,6 @@ class UserDAO:
 
     # POST
     def addUserDAO(self, user):
-
         conn, cursor = self.get_connection()
 
         email_users = cursor.execute("SELECT * FROM Usuario WHERE email = ? ", (user["email"],)).fetchall()
@@ -55,7 +54,7 @@ class UserDAO:
             query = "INSERT INTO Usuario (nome, telefone, email, senha) VALUES (?, ?, ?, ?)"
             cursor.execute(query, (user["nome"], user["telefone"], user["email"], user["senha"]))
             conn.commit()
-            return True , None
+            return "Usuario criado com sucesso" , None
         except Exception as e:
             return "Algo deu errado (BDD)" , 404
         finally:

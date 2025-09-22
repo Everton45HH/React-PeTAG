@@ -34,7 +34,7 @@ export default function Login() {
                     <input type="submit" className="submit_input" placeholder='ENVIAR'/>
                     
 
-                    <p className={styles.cadastro}>Não tem uma conta? <a href="/register">Cadastre-se</a></p>
+                    <p className={styles.cadastro}>Não tem uma conta? <a href="/user/register">Cadastre-se</a></p>
                         
                 </form>
 

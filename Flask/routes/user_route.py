@@ -4,16 +4,10 @@ from utils.error_messages import ERROR as ERRO
 
 users_bp = Blueprint('users', __name__, url_prefix='')
 
-# @users_bp.route('/register',methods=['GET'])
-# def get_user():
-    # return jsonify({"message": "Hello, this is the user registration endpoint!"}), 200
-
-
 @users_bp.route('/user/register',methods=['POST'])
 def create():
 
     info_body = request.json
-
     response, erro = create_user(info_body)
     
     if erro:
