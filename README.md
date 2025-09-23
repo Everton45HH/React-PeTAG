@@ -35,7 +35,7 @@ Oferecer uma solução tecnológica que auxilie tutores no monitoramento de seus
     - npm run dev
 
     2° Terminal
-    python Flask/app.py {Caminho pode variar no seu Dispositivo}
+    - python Flask/app.py {Caminho pode variar no seu Dispositivo}
 
 A aplicação é divida em 2 camnhos base:
 
