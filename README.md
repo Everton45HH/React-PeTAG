@@ -42,7 +42,7 @@ A aplicação é divida em 2 camnhos base:
 - http://localhost:5173/user/~
 - http://localhost:5000/api/~
 
-# NOTE ÀS PORTAS SÂO DIFERENTES!!!
+# NOTE ÀS PORTAS SÃO DIFERENTES!!!
 
 O primeiro caminho serve para a navegação da aplicação
 
