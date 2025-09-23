@@ -45,6 +45,7 @@ A aplicação é divida em 2 camnhos base:
 # NOTE ÀS PORTAS SÂO DIFERENTES!!!
 
 O primeiro caminho serve para a navegação da aplicação
+
 O segundo serve para consultas no banco de dados
 
 Exemplos
