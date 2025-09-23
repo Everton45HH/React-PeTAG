@@ -1,14 +1,3 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-:root{
-    width: 99vw;
-    overflow: hidden;
-}  */
-
 body{
     background-color: #00d5ff;
     display: flex;
@@ -55,7 +44,7 @@ body{
     border-radius: 10px;
     width: 70%;
     padding: 10%;
-    gap: 2px;
+    gap: 1.5px;
 }
 
 .login_box input {
@@ -66,13 +55,6 @@ body{
     text-align: center;
     font-size: 16px;
     background-color:  #e6ebec;
-}
-
-.login_box input:nth-last-child(2) {
-    background-color: #b0e57c;
-    font-weight: 600;
-    color: white;
-    margin: 5px;
 }
 
 .social_login{
@@ -115,4 +97,10 @@ i{
     margin: 0px 10px;
 }
 
+.errorMessage{
+    color: red;
+    margin: 0 auto;
+}
 
+
+/* RESPONSIVIDADE 852px é o limte para exprimir a tela , fazer tela para celular < 852px */

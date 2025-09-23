@@ -24,7 +24,7 @@ def login():
     user , error = get_user_by_email(email)
 
     if error:
-        return jsonify({"message": "Usuário não encontrado"}), 404
+        return jsonify({"message": "Email não encontrado"}), 404
     if user["senha"] == senha:
         return jsonify({"message": "Login realizado com sucesso"}), 200
     else:

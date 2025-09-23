@@ -1,16 +1,15 @@
-import styles from '../../styles/Login.module.css';
+import styles from '../../styles/login.module.css';
 import dog from '../../assets/images/cao2.webp';
 import logo from '../../assets/images/Logo.png';
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"></link>
-
 
 export default function Login() {
     const navigate = useNavigate()
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [errorMessage , setErrorMassage] = useState("")
 
     const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,15 +24,20 @@ export default function Login() {
         const data = await response.json();
 
         if (response.ok) {
-        alert(data.message);
-        navigate("/user/home");
-        } else {
-        alert(data.message);    
-        }
 
+            setErrorMassage("")
+            navigate("/user/home");
+
+        } else {
+        console.log(data.message);    
+        setErrorMassage(data.message)
+    }
+    
     } catch (error) {
-        console.error("Erro ao logar:", error);
-        alert("Erro ao conectar com o servidor.");
+    
+        setErrorMassage(data.message)
+        console.log(data.message);    
+
     }
     };
 
@@ -64,10 +68,26 @@ export default function Login() {
                         <i className="fa-brands fa-microsoft"></i>
                     </div>
 
-                    <input type="submit" className="submit_input" value='ENVIAR'/>
-                    
+                    <input 
+                    type="submit" 
+                    value="ENVIAR" 
+                    style={{
+                        backgroundColor: "#b0e57c",
+                        fontWeight: 600,
+                        color: "white",
+                        margin: "5px",
+                        border: "none",
+                        padding: "10px 20px",
+                        borderRadius: "6px",
+                        cursor: "pointer"
+                    }}
+                    />
+            {/* Acredita em mim tem que ser desse jeito  :)*/}
 
                     <p className={styles.cadastro}>Não tem uma conta? <a href="/user/register">Cadastre-se</a></p>
+                    
+                    {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+
                         
                 </form>
 

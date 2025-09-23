@@ -6,77 +6,96 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Register() {
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  const [nome, setNome] = useState("");
-  const [telefone, setTelefone] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+const [nome, setNome] = useState("");
+const [telefone, setTelefone] = useState("");
+const [email, setEmail] = useState("");
+const [senha, setSenha] = useState("");
+const [errorMessage , setErrorMassage] = useState("")
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  try {
+    const response = await fetch("http://127.0.0.1:5000/user/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, telefone, email, senha })
+    });
 
-    try {
-      const response = await fetch("http://127.0.0.1:5000/user/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome, telefone, email, senha })
-      });
+    const data = await response.json();
 
-      const data = await response.json();
-      alert(data.message);
-
-      if (response.ok) {
-        navigate("/user/login");
-      }
-
-    } catch (error) {
-      console.error("Erro ao registrar:", error);
-      alert("Erro ao conectar com o servidor.");
+    if (response.ok) {
+      setErrorMassage("")
+      navigate("/user/login");
+    } else {
+      console.log(data.message);    
+      setErrorMassage(data.message)
     }
-  };
+    
+  } catch (error) {
+    setErrorMassage(data.message)
+    console.log(data.message);    
+  }
+};
 
-    return (
+  return (
 
-        <div className={styles.container}>
+      <div className={styles.container}>
 
-            <img src={dog} alt="Dog" className={styles.animal_img} />
+          <img src={dog} alt="Dog" className={styles.animal_img} />
 
-            <div className={styles.login}>
+          <div className={styles.login}>
 
-                <img src={logo} alt="Logo PeTAG" className={styles.logo} />
+              <img src={logo} alt="Logo PeTAG" className={styles.logo} />
 
-                <form className={styles.login_box} onSubmit={handleSubmit}>
+              <form className={styles.login_box} onSubmit={handleSubmit}>
 
-                    <label htmlFor="nome">Nome:</label>
-                    <input type="text" placeholder="Digite seu Nome" name="nome" onChange={(e) => setNome(e.target.value)} />
-                    
-                    <label htmlFor="telefone">Telefone:</label>
-                    <input type="tel" placeholder="Digite seu Telefone" name="telefone" onChange={(e) => setTelefone(e.target.value)} />
+                  <label htmlFor="nome">Nome:</label>
+                  <input type="text" placeholder="Digite seu Nome" name="nome" onChange={(e) => setNome(e.target.value)} />
+                  
+                  <label htmlFor="telefone">Telefone:</label>
+                  <input type="tel" placeholder="Digite seu Telefone" name="telefone" onChange={(e) => setTelefone(e.target.value)} />
 
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" placeholder="Digite seu Email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                  <label htmlFor="email">Email:</label>
+                  <input type="email" placeholder="Digite seu Email" name="email" onChange={(e) => setEmail(e.target.value)} />
 
 
-                    <label htmlFor="senha">Senha:</label>
-                    <input type="password" placeholder="Digite sua Senha" name="senha" onChange={(e) => setSenha(e.target.value)} />
+                  <label htmlFor="senha">Senha:</label>
+                  <input type="password" placeholder="Digite sua Senha" name="senha" onChange={(e) => setSenha(e.target.value)} />
 
-                    <p>OU</p>
+                  <p>OU</p>
 
-                    <div className={styles.social_login}>
-                        <i className="fa-brands fa-google"></i>
-                        <i className="fa-brands fa-facebook"></i>
-                        <i className="fa-brands fa-microsoft"></i>
-                    </div>
-                    <input type="submit" id="submit-button" value="CRIAR CONTA"/>
+                  <div className={styles.social_login}>
+                      <i className="fa-brands fa-google"></i>
+                      <i className="fa-brands fa-facebook"></i>
+                      <i className="fa-brands fa-microsoft"></i>
+                  </div>
+                    <input 
+                    type="submit" 
+                    value="CRIAR CONTA" 
+                    style={{
+                        backgroundColor: "#b0e57c",
+                        fontWeight: 600,
+                        color: "white",
+                        margin: "5px",
+                        border: "none",
+                        padding: "10px 20px",
+                        borderRadius: "6px",
+                        cursor: "pointer"
+                    }}
+                    />
+          {/* Acredita em mim tem que ser desse jeito  :)*/}
 
-                    <p className={styles.cadastro}>
-                        Já tem uma conta? <a href="/user/login">Conecte-se</a>
-                    </p>
-                </form>
-            </div>
-        </div>
-    );
+                  <p className={styles.cadastro}>
+                      Já tem uma conta? <a href="/user/login">Conecte-se</a>
+                  </p>
+                                      {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+                  
+              </form>
+          </div>
+      </div>
+  );
 }
 

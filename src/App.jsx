@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/user/home" element={<Home />} />
-        {/* o usuario está sendo direcionado para o home errado , temos o home que explica o projeto e o home de gerenciar sua conta 'Tela Inicial' */}
+        {/* o usuario está sendo direcionado para o home errado , temos o home que explica o projeto e o home de gerenciar sua conta 'Tela Inicial após login' */}
         <Route path="/user/login" element={<Login />} />
         <Route path="/user/register" element={<Register />} />
       </Routes>
