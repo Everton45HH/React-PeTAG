@@ -49,6 +49,7 @@ O segundo serve para consultas no banco de dados
 
 Exemplos
 
-http://localhost:5000/api/getAllUsers -> Retorna todos usuarios do banco de dados\n
+http://localhost:5000/api/getAllUsers -> Retorna todos usuarios do banco de dados
+
 http://localhost:5000/api/user/1 -> Retorna o Usuario do ID = 1
 
