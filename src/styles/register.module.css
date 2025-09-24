@@ -24,9 +24,7 @@ body{
     width: 40%;
     height: 86vh;
     margin: auto auto;
-    padding: 10px;
     display: flex  ;
-    gap: 1vh;
     flex-direction: column;
     align-items: center;
 }
@@ -105,4 +103,10 @@ i{
 .errorMessage{
     color: red;
     margin: 0 auto;
+}
+
+.ou{
+    margin: 10px 0;
+    padding: 0;
+    /* GAMBIARRA :) */
 }

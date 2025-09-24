@@ -54,3 +54,4 @@ http://localhost:5000/api/getAllUsers -> Retorna todos usuarios do banco de dado
 
 http://localhost:5000/api/user/1 -> Retorna o Usuario do ID = 1
 
+# CASO VOCÊ APAGUE O BANCO DE DADOS APENAS REINICIE O TERMINAL 2°

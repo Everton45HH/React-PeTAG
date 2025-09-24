@@ -45,11 +45,6 @@ class UserDAO:
     def addUserDAO(self, user):
         conn, cursor = self.get_connection()
 
-        email_users = cursor.execute("SELECT * FROM Usuario WHERE email = ? ", (user["email"],)).fetchall()
-
-        if email_users:
-            return "Email já existe", 409
-
         try:
             query = "INSERT INTO Usuario (nome, telefone, email, senha) VALUES (?, ?, ?, ?)"
             cursor.execute(query, (user["nome"], user["telefone"], user["email"], user["senha"]))
@@ -115,14 +110,13 @@ class UserDAO:
     def updateUserDAO(self, id, new_info):
         conn , cursor = self.get_connection()
         try:
-            cursor.execute("SELECT * FROM Usuario WHERE userID = ?", (id,))
-            user = cursor.fetchone()
-            if not user:
+            response = self.getUserByIdDAO(id)
+            if not response:
                 return None, "User not found"
             
             if 'email' in new_info:
-                cursor.execute("SELECT * FROM Usuario WHERE email = ? AND userID != ?", (new_info['email'], id))
-                if cursor.fetchone():
+                response , erro = self.getUserByEmailDAO(new_info['email'])
+                if response:
                     return None, "Email already exists"
 
             fields = []
@@ -136,12 +130,11 @@ class UserDAO:
             cursor.execute(query, values)
             conn.commit()
 
-            cursor.execute("SELECT * FROM Usuario WHERE userID = ?", (id,))
-            updated_user = cursor.fetchone()
-            user_dict = {'userID': updated_user[0], 'nome': updated_user[1], 'email': updated_user[2], 'senha': updated_user[3], 'telefone': updated_user[4]}
-            return user_dict, None
-        except Exception as e:
-            return None, "Database error"
+            updated_user, error = self.getUserByIdDAO(id)
+            if updated_user:
+                return updated_user, None
+            else:
+                return None, error
         finally:
             cursor.close()
             conn.close()
@@ -149,14 +142,13 @@ class UserDAO:
     def deleteUserDAO(self, id):
         conn , cursor = self.get_connection()
         try:
-            cursor.execute("SELECT * FROM Usuario WHERE userID = ?", (id,))
-            user = cursor.fetchone()
+            user = self.getUserByIdDAO(id)
             if not user:
                 return None, "User not found"
             
             cursor.execute("DELETE FROM Usuario WHERE userID = ?", (id,))
             conn.commit()
-            return True, None
+            return "Atualizado", None
         except Exception as e:
             return None, "Database error"
         finally:

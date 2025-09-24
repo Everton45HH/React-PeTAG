@@ -35,8 +35,8 @@ const handleSubmit = async (e) => {
     }
     
   } catch (error) {
-    setErrorMassage(data.message)
     console.log(data.message);    
+    setErrorMassage(data.message)
   }
 };
 
@@ -53,20 +53,20 @@ const handleSubmit = async (e) => {
               <form className={styles.login_box} onSubmit={handleSubmit}>
 
                   <label htmlFor="nome">Nome:</label>
-                  <input type="text" placeholder="Digite seu Nome" name="nome" onChange={(e) => setNome(e.target.value)} />
+                  <input type="text" required placeholder="Digite seu Nome" name="nome" onChange={(e) => setNome(e.target.value)} />
                   
                   <label htmlFor="telefone">Telefone:</label>
-                  <input type="tel" placeholder="Digite seu Telefone" name="telefone" onChange={(e) => setTelefone(e.target.value)} />
+                  <input type="number" required placeholder="Digite seu Telefone" name="telefone" onChange={(e) => setTelefone(e.target.value)} />
 
                   <label htmlFor="email">Email:</label>
-                  <input type="email" placeholder="Digite seu Email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                  <input type="email" required placeholder="Digite seu Email" name="email" onChange={(e) => setEmail(e.target.value)} />
 
 
                   <label htmlFor="senha">Senha:</label>
-                  <input type="password" placeholder="Digite sua Senha" name="senha" onChange={(e) => setSenha(e.target.value)} />
+                  <input type="password" required placeholder="Digite sua Senha" name="senha" onChange={(e) => setSenha(e.target.value)} />
 
-                  <p>OU</p>
-
+                  <p className={styles.ou}>OU</p>
+                  
                   <div className={styles.social_login}>
                       <i className="fa-brands fa-google"></i>
                       <i className="fa-brands fa-facebook"></i>

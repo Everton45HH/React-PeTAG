@@ -12,25 +12,24 @@ collection:
       modified: 1750446206224
       sortKey: -1750421083112
     children:
-      - url: "{{ _.url }}/users"
+      - url: "{{ _.url }}/user/register"
         name: CADASTRAR NOVO USUÁRIO
         meta:
           id: req_5bbdf861a4d24d0691408e70016ba7e3
           created: 1750187682646
-          modified: 1750682636664
+          modified: 1758729122364
           isPrivate: false
           sortKey: -1750421111113
         method: POST
         body:
           mimeType: application/json
-          text: |+
-            
+          text: |
             {
-             "name": "Lucas Gabriel",
-             "email": "lucasgabrielsilveira14@yahoomail.com",
-             "senha": "6666123"
-             } 
-
+            	"email": "ola@dgmail.com",
+            	"telefone" : "12345678",
+            	"nome": "Jóia",
+            	"senha": "6666123"
+            }
         headers:
           - name: Content-Type
             value: application/json
@@ -44,12 +43,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/users"
+      - url: "{{ _.url }}/api/getAllUsers"
         name: LISTAR TODOS OS USUÁRIOS
         meta:
           id: req_9c585eb46d3d4426a9fba65674b0c8ed
           created: 1750188373801
-          modified: 1750421142746
+          modified: 1758727265340
           isPrivate: false
           sortKey: -1750421111013
         method: GET
@@ -64,16 +63,20 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/users/1"
+      - url: "{{ _.url }}/api/user/3"
         name: APRESENTAR DADOS DO USUÁRIO ID
         meta:
           id: req_e1e0feccf4b34c309c109a9789b58c56
           created: 1750188395091
-          modified: 1750421138665
+          modified: 1758727813701
           isPrivate: false
           sortKey: -1750421110813
         method: GET
+        body:
+          mimeType: application/json
         headers:
+          - name: Content-Type
+            value: application/json
           - name: User-Agent
             value: insomnia/11.2.0
         settings:
@@ -84,12 +87,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/users/1"
+      - url: "{{ _.url }}/api/user/3"
         name: ATUALIZAR DADOS DO USUÁRIO
         meta:
           id: req_3dea91795c204d7ea1e4052baaaba1b3
           created: 1750188506749
-          modified: 1750682830277
+          modified: 1758728657059
           isPrivate: false
           sortKey: -1750421110913
         method: PUT
@@ -97,8 +100,8 @@ collection:
           mimeType: application/json
           text: |
             {
-             "name":"Lucas Gabriel",
-             "email": "lucsgabrielsilveira14@yahoomail.com",
+             "nome":"Eveerton",
+             "email": "@gmail.com",
             	"senha" : "senha123"
              }
         headers:
@@ -114,12 +117,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/users/1"
+      - url: "{{ _.url }}/api/user/6"
         name: APAGAR USUÁRIO DO SISTEMA
         meta:
           id: req_3749f02f74354e72aa11e941c697f7fc
           created: 1750190026791
-          modified: 1750421134680
+          modified: 1758729136870
           isPrivate: false
           sortKey: -1750421110713
         method: DELETE
@@ -134,11 +137,11 @@ collection:
             send: true
             store: true
           rebuildPath: true
-  - name: DEVICES
+  - name: DEVICES(ainda não funciona)
     meta:
       id: fld_4d713726d8b043ca9589bb267734522e
       created: 1750421205001
-      modified: 1750421205001
+      modified: 1758729228679
       sortKey: -1750421083062
     children:
       - url: "{{ _.url }}/devices"
@@ -276,7 +279,7 @@ environments:
   meta:
     id: env_a49029921dcb4ac399a74bed7419a7c7
     created: 1750187360605
-    modified: 1750187653326
+    modified: 1758727711978
     isPrivate: false
   data:
     url: http://127.0.0.1:5000
