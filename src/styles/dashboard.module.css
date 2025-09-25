@@ -1,0 +1,42 @@
+.global {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25vh;
+    background-color: #4a90e2;
+    font-size: 3vw;
+    gap: 10vw;
+}
+
+h1 {
+    color: white;
+}
+
+.menu {
+    background-color: red;
+    height: 15vh;
+    width: 7vw;
+}
+
+.userIcon{
+    border-radius: 100px;
+    display: flex;
+    background-color: purple;
+    height: 20vh;
+    width: 10vw;
+    color: white;
+    display: flex;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    text-align: center;
+}

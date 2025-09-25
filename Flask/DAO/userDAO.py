@@ -17,6 +17,7 @@ class UserDAO:
 
             CREATE TABLE IF NOT EXISTS Coleira(
                 idColeira INTEGER PRIMARY KEY AUTOINCREMENT,
+                userID INTERGER ,
                 nomeColeira TEXT,
                 longitude REAL,
                 latitude REAL
@@ -62,7 +63,7 @@ class UserDAO:
         try:    
             cursor.execute("SELECT * FROM Usuario")
             rows = cursor.fetchall()
-            users = [{'userID': row[0], 'nome': row[1], 'email': row[2], 'senha': row[3], 'telefone': row[4]} for row in rows]
+            users = [{'userID': row[0], 'nome': row[1], 'telefone': row[2], 'email': row[3], 'senha': row[4]} for row in rows]
             if users:
                 return users, None
             else:

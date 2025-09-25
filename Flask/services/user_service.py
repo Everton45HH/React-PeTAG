@@ -1,4 +1,3 @@
-from models.user import User
 from DAO.userDAO import UserDAO
 
 daoService = UserDAO()

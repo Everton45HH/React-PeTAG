@@ -44,7 +44,7 @@ def login():
     if error:
         return jsonify({"message": "Email não encontrado"}), 404
     if user["senha"] == senha:
-        return jsonify({"message": "Login realizado com sucesso"}), 200
+        return jsonify({"message": "Login realizado com sucesso","userID":user["userID"]}), 200
     else:
         return jsonify({"message": "Senha incorreta"}), 401
 

@@ -9,7 +9,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [errorMessage , setErrorMassage] = useState("")
+    const [errorMassage , setErrorMassage] = useState("")
 
     const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,20 +24,19 @@ export default function Login() {
         const data = await response.json();
 
         if (response.ok) {
-
+            localStorage.setItem("userID", data.userID);
+            console.log(localStorage)
             setErrorMassage("")
-            navigate("/user/home");
+            navigate("/user/dashboard");
 
         } else {
         console.log(data.message);    
         setErrorMassage(data.message)
     }
     
-    } catch (error) {
-    
-        setErrorMassage(data.message)
-        console.log(data.message);    
-
+    }catch (error) {
+    console.log(error);
+    setErrorMassage("Erro ao conectar com o servidor");
     }
     };
 
@@ -86,7 +85,7 @@ export default function Login() {
 
                     <p className={styles.cadastro}>Não tem uma conta? <a href="/user/register">Cadastre-se</a></p>
                     
-                    {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+                    {errorMassage && <p className={styles.errorMassage}>{errorMassage}</p>}
 
                         
                 </form>

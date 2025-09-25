@@ -17,7 +17,7 @@ collection:
         meta:
           id: req_5bbdf861a4d24d0691408e70016ba7e3
           created: 1750187682646
-          modified: 1758729122364
+          modified: 1758763369874
           isPrivate: false
           sortKey: -1750421111113
         method: POST
@@ -25,10 +25,10 @@ collection:
           mimeType: application/json
           text: |
             {
-            	"email": "ola@dgmail.com",
+            	"email": "ola2dgmail.com",
             	"telefone" : "12345678",
             	"nome": "Jóia",
-            	"senha": "6666123"
+            	"senha": "123"
             }
         headers:
           - name: Content-Type
@@ -87,12 +87,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/api/user/3"
+      - url: "{{ _.url }}/api/user/4"
         name: ATUALIZAR DADOS DO USUÁRIO
         meta:
           id: req_3dea91795c204d7ea1e4052baaaba1b3
           created: 1750188506749
-          modified: 1758728657059
+          modified: 1758771234991
           isPrivate: false
           sortKey: -1750421110913
         method: PUT
@@ -100,9 +100,9 @@ collection:
           mimeType: application/json
           text: |
             {
-             "nome":"Eveerton",
-             "email": "@gmail.com",
-            	"senha" : "senha123"
+             "nome":"Everton",
+             "email": "ola2@gmail.com",
+            	"senha" : "123"
              }
         headers:
           - name: Content-Type
@@ -137,19 +137,19 @@ collection:
             send: true
             store: true
           rebuildPath: true
-  - name: DEVICES(ainda não funciona)
+  - name: Coleira(ainda não funciona)
     meta:
       id: fld_4d713726d8b043ca9589bb267734522e
       created: 1750421205001
-      modified: 1758729228679
+      modified: 1758761104504
       sortKey: -1750421083062
     children:
-      - url: "{{ _.url }}/devices"
+      - url: "{{ _.url }}/api/coleira"
         name: CADASTRAR NOVO DISPOSITIVO
         meta:
           id: req_3d1cb4d99c224b65844c581d6afa3f75
           created: 1750421205002
-          modified: 1750682491732
+          modified: 1758768835097
           isPrivate: false
           sortKey: -1750421111113
         method: POST
@@ -158,8 +158,8 @@ collection:
           text: |+
             
             {
-             "deviceName": "CocoLoco1",
-            	"userId" : "1",
+            	"nomeColeira" : "CãO 9",
+            	"userID" : "1",
               "latitude": "1300",
             	"longitude" : "123456"
              } 
@@ -177,12 +177,12 @@ collection:
             send: true
             store: true
           rebuildPath: true
-      - url: "{{ _.url }}/devices"
+      - url: "{{ _.url }}/api/coleira/99"
         name: LISTAR TODOS OS DISPOSITIVOS
         meta:
           id: req_49cb204c931a4e29932bbda7078ab306
           created: 1750421205003
-          modified: 1750421941968
+          modified: 1758770416237
           isPrivate: false
           sortKey: -1750421111013
         method: GET
