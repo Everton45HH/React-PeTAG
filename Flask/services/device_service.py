@@ -10,6 +10,10 @@ def get_all_coleiras(id):
     response , error = daoService.getAllColeirasDAO(id)
     return response , error
 
+def delete_coleira(id):
+    response , error = daoService.deleteColeiraDAO(id)
+    return response , error
+
 # def device_list():
 #     if not devices:
 #         return None, "devices not found"

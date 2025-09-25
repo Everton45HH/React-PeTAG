@@ -55,10 +55,8 @@ def login():
 @users_bp.route('/api/user/<int:id>', methods=['PATCH','PUT'])
 def update(id):
     user, erro = update_user(id, request.json)
-    print(erro)
-    if erro:
-        erro_info = ERRO.get(erro, {'message': 'Unknown error', 'status_code': 500})
-        return jsonify({'message': erro_info['message']}), erro_info['status_code']
+    if erro == "Email already exists":
+        return jsonify({'message': 'Email já existe'}), 409 
     return jsonify(user), 200
 
 @users_bp.route('/api/user/<int:id>', methods=['DELETE'])

@@ -116,9 +116,9 @@ class UserDAO:
                 return None, "User not found"
             
             if 'email' in new_info:
-                response , erro = self.getUserByEmailDAO(new_info['email'])
+                response = self.getUserByEmailDAO(new_info['email'])
                 if response:
-                    return None, "Email already exists"
+                    return "Email already exists" , 404
 
             fields = []
             values = []

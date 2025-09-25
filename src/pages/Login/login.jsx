@@ -9,7 +9,7 @@ export default function Login() {
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
-    const [errorMassage , setErrorMassage] = useState("")
+    const [errorMessage , setErrorMassage] = useState("")
 
     const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,7 +85,7 @@ export default function Login() {
 
                     <p className={styles.cadastro}>Não tem uma conta? <a href="/user/register">Cadastre-se</a></p>
                     
-                    {errorMassage && <p className={styles.errorMassage}>{errorMassage}</p>}
+                    {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
                         
                 </form>

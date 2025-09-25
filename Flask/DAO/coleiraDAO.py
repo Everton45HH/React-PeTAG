@@ -36,3 +36,19 @@ class ColeiraDAO:
         finally:
             cursor.close()
             conn.close()
+    def deleteColeiraDAO(self, id_coleira):
+        conn, cursor = self.get_connection()
+        try:
+            query = "DELETE FROM Coleira WHERE idColeira = ?"
+            cursor.execute(query, (id_coleira,))
+            conn.commit()
+
+            if cursor.rowcount == 0:
+                return None, 404
+            return {"message": "Coleira deletada com sucesso"}, None
+        except Exception as e:
+            print("Erro no deleteColeiraDAO:", e)  # debug no console
+            return None, 500
+        finally:
+            cursor.close()
+            conn.close()

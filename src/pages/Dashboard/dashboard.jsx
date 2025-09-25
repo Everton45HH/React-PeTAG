@@ -6,24 +6,33 @@ export default function Dashboard() {
     const [coleiras, setColeiras] = useState([]);
   
     useEffect(() => {
-        var userId = localStorage.getItem("userID");
+    const fetchColeiras = () => {
+        let userId = localStorage.getItem("userID");
 
         if (!userId) {
-
             console.error("Usuário não está logado ou userID não existe no localStorage.");
             console.error("Sessão definida para 1");
-            userId = 1
-            return;
+            userId = 1;
         } else {
-            console.log(`ID da sessão ${userId}`)
+            console.log(`ID da sessão ${userId}`);
         }
+
         fetch(`http://localhost:5000/api/coleira/${userId}`)
             .then(res => res.json())
             .then(data => {
                 setColeiras(data);
+                console.log(data);
             })
             .catch(err => console.error("Erro ao buscar coleiras:", err));
-    }, []);
+    };
+
+    fetchColeiras();
+
+    const interval = setInterval(fetchColeiras, 3000);
+
+    return () => clearInterval(interval);
+}, []);
+
     
     return ( 
         <>
@@ -49,8 +58,7 @@ export default function Dashboard() {
                     {coleiras.map((c) => (
                         <Coleira
                             key={c.id}
-                            nome={c.nome}
-                            status={c.status}
+                            nome={c.nomeColeira}
                             latitude={c.latitude}
                             longitude={c.longitude}
                         />

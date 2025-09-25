@@ -30,6 +30,16 @@ def listColeiras(id):
         return jsonify({'message': erro_info['message']}), erro_info['status_code']
     return jsonify(lista), 200
 
+@coleira_bp.route('/api/coleira/<int:id>', methods=['DELETE'])
+def deleteColeira(id):
+
+    response, erro = delete_coleira(id)
+    if erro:
+        erro_info = ERRO.get(erro, {'message': 'Unknown error', 'status_code': 500})
+        return jsonify({'message': erro_info['message']}), erro_info['status_code']
+    
+    return jsonify({'massage' : response}), 200
+
 # @coleira_bp.route('/devices/<int:id>', methods=['GET'])
 # def chosen_device(id):
 #     device_found, erro  = chosen_device_list(id)

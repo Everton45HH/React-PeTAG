@@ -100,6 +100,10 @@ i{
     color: red;
     margin: 0 auto;
 }
-
-
 /* RESPONSIVIDADE 852px é o limte para exprimir a tela , fazer tela para celular < 852px */
+
+.ou{
+    margin: 10px 0;
+    padding: 0;
+    /* GAMBIARRA :) */
+}
