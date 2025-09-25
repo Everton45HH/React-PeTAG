@@ -28,7 +28,7 @@ class ColeiraDAO:
             query = "SELECT * FROM Coleira WHERE userID = ?"
             cursor.execute(query, (id,))
             rows = cursor.fetchall()
-            coleiras = [{'idColeira': row[0], 'nomeColeira': row[1], 'userID': row[2], 'longitude': row[3], 'latitude': row[4]} for row in rows]
+            coleiras = [{'idColeira': row[0], 'userID': row[1], 'nomeColeira': row[2], 'longitude': row[3], 'latitude': row[4]} for row in rows]
 
             return coleiras, None
         except Exception as e:
